@@ -89,7 +89,7 @@ WSGI_APPLICATION = 'djangocrud.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'djangodev',
+        'NAME': 'djangodb',
         'USER': 'postgres',
         'PASSWORD': '123456',
         'HOST': '172.25.4.111',
