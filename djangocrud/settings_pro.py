@@ -6,7 +6,7 @@ ALLOWED_HOSTS = ["172.25.4.111"]
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'nombre_base_datos',
+        'NAME': 'djangodb',
         'USER': 'postgres',
         'PASSWORD': '123456',
         'HOST': '172.25.4.111',
