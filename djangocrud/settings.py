@@ -123,3 +123,10 @@ LOGIN_URL = '/signin'
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+try:
+    # Importar la configuración de desarrollo.
+    from .settings_pro import *
+except ModuleNotFoundError:
+    # Ignorar el error si el archivo no se encuentra.
+    pass
