@@ -32,7 +32,7 @@ def signup(request):
                                    
               return  render(request, 'signup.html', {    
                      'form' : UserCreationForm,
-                     'error' : 'Passwordss do not match'})
+                     'error' : 'Passwords do not match'})
 
 @login_required
 def tasks(request):
