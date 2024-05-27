@@ -11,10 +11,14 @@ https://docs.djangoproject.com/en/5.0/ref/settings/
 """
 
 from pathlib import Path
-
+import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
-BASE_DIR = Path(__file__).resolve().parent.parent
+# Esto lo coloque aqui, aun no he usado estatic
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+STATIC_ROOT = os.path.join(BASE_DIR, 'static/')
+
+#BASE_DIR = Path(__file__).resolve().parent.parent
 
 
 # Quick-start development settings - unsuitable for production
@@ -26,7 +30,8 @@ SECRET_KEY = 'django-insecure-j!mpm(1f5seta6$53gka#v7@6u%%i6^jis@_4^xpntd@bixjv=
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["172.25.4.111"]
+
 
 
 # Application definition
@@ -84,7 +89,7 @@ WSGI_APPLICATION = 'djangocrud.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'djangodb',
+        'NAME': 'djangodev',
         'USER': 'postgres',
         'PASSWORD': '123456',
         'HOST': '172.25.4.111',
@@ -136,7 +141,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 try:
     # Importar la configuración de desarrollo.
-    from .settings_pro import *
+    from .settings_local import *
 except ModuleNotFoundError:
     # Ignorar el error si el archivo no se encuentra.
     pass
